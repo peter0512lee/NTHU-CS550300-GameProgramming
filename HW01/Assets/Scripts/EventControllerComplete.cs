@@ -1,0 +1,27 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EventControllerComplete : MonoBehaviour
+{
+    public GameObject Cube;
+    private GameObject curCube;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+        if(curCube == null) {
+            for(int i = 0; i < 5; i++) {
+                float x = Random.Range(-9.0f, 9.0f);
+                float z = Random.Range(-15.0f, 4.0f);
+                curCube = Instantiate(Cube, new Vector3(x, 0.5f, z), Quaternion.identity);
+            }
+        }   
+    }
+}
